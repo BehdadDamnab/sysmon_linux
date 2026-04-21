@@ -15,7 +15,7 @@ void *handle_client(void *arg)
     int client_fd = *(int *)arg;
     free(arg);
 
-    // printf("[%d] Client thread started!\n", client_fd);
+    printf("[%d] Client thread started!\n", client_fd);
 
     SystemStats stats = logger_starter();
     file_writer(stats);
@@ -26,7 +26,7 @@ void *handle_client(void *arg)
 
     close(client_fd);
 
-    // printf("[%d] Client thread done!\n", client_fd);
+    printf("[%d] Client thread done!\n", client_fd);
     return NULL;
 }
 
@@ -44,14 +44,14 @@ int create_socket(void)
 
     bind(server_fd, (struct sockaddr *)&addr, sizeof(addr));
     listen(server_fd, 5);
-    // printf("Server listening on port %d...\n", PORT);
+    printf("Server listening on port %d...\n", PORT);
 
     while (1)
     {
 
         int *client_fd = malloc(sizeof(int));
         *client_fd = accept(server_fd, NULL, NULL);
-        // printf("[%d] New client connected!\n", *client_fd);
+        printf("[%d] New client connected!\n", *client_fd);
 
         pthread_t tid;
         pthread_create(&tid, NULL, handle_client, client_fd);
