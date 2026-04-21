@@ -19,22 +19,23 @@ int main(int argc, char **argv)
         printf("Usage: ./sysmon <option>\n");
         return 1;
     }
-
-    daemonize();
     
     if (strcmp(argv[1], "timer") == 0)
     {
         printf("Timer Option!\n");
+        daemonize();
         start_timer();
     }
     else if (strcmp(argv[1], "socket") == 0)
     {
         printf("Socket Option!\n");
+        daemonize();
         create_socket();
     }
     else
     {
         printf("Unknown option: %s\n", argv[1]);
+        return 1;
     }
 
     return 0;

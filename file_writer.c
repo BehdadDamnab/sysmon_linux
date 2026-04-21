@@ -43,7 +43,6 @@ void file_writer(SystemStats stats)
         timebuf, stats.uptime);
 
 
-    // mutex sould be add here in future
     pthread_mutex_lock(&file_lock);
     write(fd, buf, len); 
     pthread_mutex_unlock(&file_lock);

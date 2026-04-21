@@ -50,9 +50,9 @@ void start_timer(void)
 
 
     struct itimerspec its;
-    its.it_value.tv_sec     = 1;   /* first firing: after 2 seconds */
+    its.it_value.tv_sec     = 1;
     its.it_value.tv_nsec    = 0;
-    its.it_interval.tv_sec  = 3;   /* repeat every 2 seconds */
+    its.it_interval.tv_sec  = 3;
     its.it_interval.tv_nsec = 0;
 
     if (timer_settime(timer_id, 0, &its, NULL) != 0) {
