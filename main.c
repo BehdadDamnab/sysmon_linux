@@ -15,8 +15,6 @@ int main(int argc, char **argv)
 {
     (void)argc;
 
-    
-
     if (argc < 2) {
         printf("Usage: ./sysmon <option>\n");
         return 1;

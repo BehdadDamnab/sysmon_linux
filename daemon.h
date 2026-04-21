@@ -3,5 +3,4 @@
 
 void daemonize(void);
 
-
 #endif

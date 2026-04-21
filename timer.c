@@ -61,7 +61,6 @@ void start_timer(void)
     }
 
 
-
     while (1) pause();
 
     timer_delete(timer_id);

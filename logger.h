@@ -1,7 +1,6 @@
 #ifndef LOGGER_H
 # define LOGGER_H
 
-
 typedef struct {
     long user;
     long nice;
@@ -29,6 +28,5 @@ float       ram_usage(void);
 long        up_time(void);
 void        *monitor(void *arg);
 SystemStats logger_starter(void);  // ← was void, now SystemStats
-
 
 #endif

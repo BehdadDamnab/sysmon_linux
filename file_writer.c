@@ -15,11 +15,6 @@ pthread_mutex_t file_lock = PTHREAD_MUTEX_INITIALIZER;
 void file_writer(SystemStats stats)
 {
 
-    // printf("CPU Usage  : %.2f%%\n", stats.cpu);
-    // printf("RAM Usage  : %.2f%%\n", stats.ram);
-    // printf("Up Time (s): %ld\n",    stats.uptime);
-
-
     int fd = open("/tmp/sysmon.log", O_WRONLY | O_CREAT | O_APPEND, 0644);
 
     if (fd < 0)
